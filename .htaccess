@@ -1,0 +1,19 @@
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+RewriteRule ^$ index.php [L]
+RewriteRule ^login$ login.php [L]
+RewriteRule ^ceklogin$ ceklogin.php [L]
+RewriteRule ^signin$ sign-in.php [L]
+RewriteRule ^lock$ lock.php [L]
+RewriteRule ^logout$ logout.php [L]
+
+RewriteRule ^password$ dashboard/user-ganti-password.php [L]
+RewriteRule ^forgotpassword$ forgot-password.php [L]
+RewriteRule ^resetcode$ reset-code.php [L]
+RewriteRule ^newpassword$ new-password.php [L]
+RewriteRule ^passwordchanged$ password-changed.php [L]
+RewriteRule ^userotp$ user-otp.php [L]
+
+Options All -Indexes

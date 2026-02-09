@@ -1,0 +1,1 @@
+ echo "<script type='text/javascript'>const Toast = Swal.mixin({toast: true,position: 'top-end',showConfirmButton: false,timer: 3000});Toast.fire({icon: 'success',title: 'Selamat Anda Berhasil Masuk'});</script>";
