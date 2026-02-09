@@ -1,5 +1,5 @@
 <?php
-	include("assets/config/koneksi.php");  
+	include("../assets/config/koneksi.php");  
 	switch ($_GET['jenis']) {
 		//ambil data kota / kabupaten
 		case 'kota':
@@ -39,6 +39,20 @@
 		     $getcity = mysqli_query($con,"SELECT  * FROM villages WHERE id_kec ='$id_kec' ORDER BY nama_kelurahan ASC") or die ('Query Gagal');
 		     while($data = mysqli_fetch_array($getcity)){
 		          echo '<option value="'.$data['id_kel'].'">'.$data['nama_kelurahan'].'</option>';
+		     }
+		     exit;    
+		}
+		break;
+
+		//ambil data pangkat
+		case 'pangkat':
+		$id_p = $_POST['id_p'];
+		if($id_p == ''){
+		     exit;
+		}else{
+		     $getp = mysqli_query($con,"SELECT  * FROM status_pangkat WHERE id_p ='$id_p' ORDER BY nama_pangkat ASC") or die ('Query Gagal');
+		     while($data = mysqli_fetch_array($getp)){
+		          echo '<option value="'.$data['id_p'].'">'.$data['nama_pangkat'].'</option>';
 		     }
 		     exit;    
 		}
